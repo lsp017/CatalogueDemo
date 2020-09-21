@@ -2,7 +2,7 @@
 #Application Configuration
 spring:
   application:
-    name: person-service
+    name: catalogue-service
 
 #Server Configuration
 server:
@@ -13,12 +13,4 @@ mongo:
   database : person-db
   url : mongodb+srv://my_user:WROLgDt2JRYBokMS@cluster0-rrnyw.mongodb.net/test?retryWrites=true&w=majority
 
-#Tenant Validation Configuration
-tenants:
-  - id: 100A5C50050020EABB400400AC160000
-    name: DEFAULT-TENANT
-    default-tenant : true
-    validators:
-      person-create:
-        - test
 
