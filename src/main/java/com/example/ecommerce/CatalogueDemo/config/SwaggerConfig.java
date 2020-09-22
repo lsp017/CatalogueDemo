@@ -26,7 +26,7 @@ public class SwaggerConfig  extends WebMvcConfigurationSupport{
     public Docket apiDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.cts.personservice.resource"))
+                .apis(RequestHandlerSelectors.basePackage("com.example.ecommerce.CatalogueDemo.resource"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(getApiInfo());
@@ -34,7 +34,7 @@ public class SwaggerConfig  extends WebMvcConfigurationSupport{
 
     private ApiInfo getApiInfo() {
         return new ApiInfo(
-                "Person Service",
+                "Catalogue Service",
                 "DESCIPRION",
                 "1.0.0",
                 "TERMS OF SERVICE URL",
