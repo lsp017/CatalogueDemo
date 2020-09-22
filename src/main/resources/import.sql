@@ -8,9 +8,9 @@ insert  into products(id,name,currency,value,quantity,version) values (7,'Yellow
 insert  into products(id,name,currency,value,quantity,version) values (8,'Black Shorts','EUR','198.00',17,1);
 insert  into products(id,name,currency,value,quantity,version) values (9,'Pink Shorts','EUR','162.00',1,1);
 
---insert into categories (name, id) values ('Mens',1);
---insert into categories (name, id) values ('Womens',2);
---insert into categories (name, id) values ('Shirts',10);
+insert into categories (name, id) values ('Mens',1);
+insert into categories (name, id) values ('Womens',2);
+insert into categories (name, id) values ('Shirts',10);
 --
 --insert into products_categories(product_id,category_id) values (1,10);
 --insert into products_categories(product_id,category_id) values (1,1);
