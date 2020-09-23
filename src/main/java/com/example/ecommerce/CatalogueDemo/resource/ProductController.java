@@ -38,15 +38,15 @@ private final ProductService productService;
         return ResponseEntity.status(HttpStatus.OK).body(productService.retrieveAllProducts());
     }
 
-    @ApiOperation("create product ")
-    @PostMapping(value="/CretaeProduct")
+    @ApiOperation("create product")
+    @PostMapping(value="/CreateProduct")
     public ResponseEntity<String> CreateProduct(@Valid@RequestBody Product product){
         String reponseRes = productService.createProduct(product);
        return ResponseEntity.status(HttpStatus.OK).body(reponseRes);
     }
 
 
-    @ApiOperation("Update a person. 404 if the person's identifier is not found.")
+    @ApiOperation("Update a product. 404 if the product is not found.")
     @PutMapping(value = "/{productId}")
     public ResponseEntity<Void> updatePerson(@PathVariable Long productId,
                                              @RequestBody Product product) {
@@ -57,7 +57,7 @@ private final ProductService productService;
     }
 
     //4.Delete Person
-    @ApiOperation("Delete a person. 404 if the persons's identifier is not found.")
+    @ApiOperation("Delete a product. 404 if the product is not found.")
     @DeleteMapping(value = "/{productId}")
     public ResponseEntity<Void> deletePerson(@PathVariable Long productId) {
         productService.deletePerson(productId);
