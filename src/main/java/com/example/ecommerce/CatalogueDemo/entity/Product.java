@@ -1,27 +1,19 @@
 package com.example.ecommerce.CatalogueDemo.entity;
 
 import com.example.ecommerce.CatalogueDemo.entity.MonetaryAmount;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
-import javax.persistence.Version;
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "products")
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
 
@@ -29,10 +21,13 @@ public class Product {
     @Column(name = "version")
     private Integer version;
 
+    @NotBlank
+    @Size(min = 2)
     private String name;
 
     private int quantity;
 
+    @Embedded
     private MonetaryAmount price;
 
 //    @ManyToMany(cascade = CascadeType.ALL)

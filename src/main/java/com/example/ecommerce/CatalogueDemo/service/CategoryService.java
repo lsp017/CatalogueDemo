@@ -3,6 +3,10 @@ package com.example.ecommerce.CatalogueDemo.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.example.ecommerce.CatalogueDemo.entity.Product;
+import com.example.ecommerce.CatalogueDemo.service.converter.ProductConvertor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,4 +26,5 @@ public class CategoryService {
 	public Optional<Category> retrieveCategoryById(Long id) {
 		return categoryRepository.findById(id);
 	}
+
 }
