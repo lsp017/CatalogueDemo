@@ -7,20 +7,49 @@ insert  into products(id,name,currency,value,quantity,version) values (6,'White 
 insert  into products(id,name,currency,value,quantity,version) values (7,'Yellow Shorts','EUR','332.00',12,1);
 insert  into products(id,name,currency,value,quantity,version) values (8,'Black Shorts','EUR','198.00',17,1);
 insert  into products(id,name,currency,value,quantity,version) values (9,'Pink Shorts','EUR','162.00',1,1);
+insert  into products(id,name,currency,value,quantity,version) values (10,'Blue Shorts','EUR','169.00',1,1);
 
-insert into categories (name, id) values ('Mens',1);
-insert into categories (name, id) values ('Womens',2);
-insert into categories (name, id) values ('Shirts',10);
---
---insert into products_categories(product_id,category_id) values (1,10);
---insert into products_categories(product_id,category_id) values (1,1);
---insert into products_categories(product_id,category_id) values (2,10);
---insert into products_categories(product_id,category_id) values (2,1);
---insert into products_categories(product_id,categoyr_id) values (3,10);
---insert into products_categories(product_id,categoyr_id) values (3,11);
---insert into products_categories(product_id,category_id) values (4,1);
---insert into products_categories(product_id,category_id) values (5,1);
---insert into products_categories(product_id,category_id) values (6,1);
---insert into products_categories(product_id,category_id) values (7,2);
---insert into products_categories(product_id,category_id) values (8,2);
---insert into products_categories(product_id,category_id) values (9,2);
+insert  into products(id,name,currency,value,quantity,version) values (11,'Formal Black Shirt','EUR','799.00',1,1);
+insert  into products(id,name,currency,value,quantity,version) values (12,'Formal White Shirt','EUR','899.00',11,1);
+insert  into products(id,name,currency,value,quantity,version) values (13,'Casual Denim Shirt','EUR','152.00',10,1);
+insert  into products(id,name,currency,value,quantity,version) values (14,'Orange Skirt','EUR','999.00',12,1);
+insert  into products(id,name,currency,value,quantity,version) values (15,'Polo T-Shirt','EUR','500.00',17,1);
+insert  into products(id,name,currency,value,quantity,version) values (16,'Blue Jeans','EUR','132.00',1,1);
+insert  into products(id,name,currency,value,quantity,version) values (17,'Denim Jacket','EUR','332.00',12,1);
+insert  into products(id,name,currency,value,quantity,version) values (18,'Formal Trousers','EUR','198.00',17,1);
+insert  into products(id,name,currency,value,quantity,version) values (19,'Little Black Dress','EUR','899.00',1,1);
+insert  into products(id,name,currency,value,quantity,version) values (20,'Pink Gown','EUR','650.00',1,1);
+
+insert into categories (name, id) values ('Mens Wear',1);
+insert into categories (name, id) values ('Womens Wear',2);
+insert into categories (name, id) values ('Top Wear',3);
+
+insert into products_categories(product_id,category_id) values (1,1);
+insert into products_categories(product_id,category_id) values (1,3);
+insert into products_categories(product_id,category_id) values (2,1);
+insert into products_categories(product_id,category_id) values (2,3);
+insert into products_categories(product_id,categoyr_id) values (3,1);
+insert into products_categories(product_id,categoyr_id) values (3,3);
+insert into products_categories(product_id,category_id) values (4,1);
+insert into products_categories(product_id,category_id) values (5,1);
+insert into products_categories(product_id,category_id) values (6,1);
+insert into products_categories(product_id,category_id) values (7,1);
+insert into products_categories(product_id,category_id) values (8,1);
+insert into products_categories(product_id,category_id) values (9,1);
+insert into products_categories(product_id,category_id) values (10,1);
+
+insert into products_categories(product_id,category_id) values (11,2);
+insert into products_categories(product_id,category_id) values (11,3);
+insert into products_categories(product_id,category_id) values (12,2);
+insert into products_categories(product_id,category_id) values (12,3);
+insert into products_categories(product_id,categoyr_id) values (13,2);
+insert into products_categories(product_id,categoyr_id) values (13,3);
+insert into products_categories(product_id,category_id) values (14,2);
+insert into products_categories(product_id,category_id) values (15,2);
+insert into products_categories(product_id,category_id) values (15,3);
+insert into products_categories(product_id,category_id) values (16,2);
+insert into products_categories(product_id,category_id) values (17,2);
+insert into products_categories(product_id,category_id) values (17,3);
+insert into products_categories(product_id,category_id) values (18,2);
+insert into products_categories(product_id,category_id) values (19,2);
+insert into products_categories(product_id,category_id) values (20,2);

@@ -7,23 +7,16 @@ spring:
     show-sql: true
   datasource:
     initialization-mode: always
-    url: jdbc:h2:mem:testdb
-  data:
-    jpa:
-     repositories:
-      bootstrap-mode: default
-  h2:
-   console:
-    enabled: true
+  data: import.sql
 
 
 server:
   port: 8000
 
 #Mongo Configuration
-#mongo:
-#  database : person-db
-#  url : mongodb+srv://my_user:WROLgDt2JRYBokMS@cluster0-rrnyw.mongodb.net/test?retryWrites=true&w=majority
+mongo:
+  database : person-db
+  url : mongodb+srv://my_user:WROLgDt2JRYBokMS@cluster0-rrnyw.mongodb.net/test?retryWrites=true&w=majority
 
 #logging:
 #  level:
