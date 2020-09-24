@@ -12,7 +12,10 @@ public class ProductConvertor {
         productEntity.setQuantity(product.getQuantity());
         productEntity.setId(product.getId());
         productEntity.setVersion(product.getVersion());
-        product.setPrice(monetaryAmount);
+        productEntity.setPrice(monetaryAmount);
+        
+        productEntity.setCategories(product.getCategories());
+        
         return productEntity;
     }
 }

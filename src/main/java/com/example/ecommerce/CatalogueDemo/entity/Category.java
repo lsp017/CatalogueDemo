@@ -4,14 +4,10 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -27,7 +23,6 @@ public class Category {
     private String name;
 
     @ManyToMany(mappedBy = "categories")
-    @Fetch(FetchMode.JOIN)
     @JsonIgnore
     private List<Product> products;
 
@@ -54,6 +49,11 @@ public class Category {
     public void setProducts(List<Product> products) {
         this.products = products;
     }
+
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + "]";
+	}
 
 }
 

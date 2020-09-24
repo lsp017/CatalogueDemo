@@ -2,10 +2,10 @@ package com.example.ecommerce.CatalogueDemo.entity;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
@@ -21,6 +21,7 @@ public class Product {
 
     @Id
     @Column(name = "id")
+    @GeneratedValue
     private Long id;
 
     @Version
@@ -36,7 +37,7 @@ public class Product {
     @Embedded
     private MonetaryAmount price;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(name = "products_categories", joinColumns = {
             @JoinColumn(name = "product_id", referencedColumnName = "id") }, inverseJoinColumns = {
             @JoinColumn(name = "category_id", referencedColumnName = "id") })
