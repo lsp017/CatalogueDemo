@@ -1,27 +1,25 @@
 package com.example.ecommerce.CatalogueDemo.entity;
 
-import com.example.ecommerce.CatalogueDemo.entity.MonetaryAmount;
-
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Version;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "products")
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
 
@@ -29,17 +27,20 @@ public class Product {
     @Column(name = "version")
     private Integer version;
 
+    @NotBlank
+    @Size(min = 2)
     private String name;
 
     private int quantity;
 
+    @Embedded
     private MonetaryAmount price;
 
-//    @ManyToMany(cascade = CascadeType.ALL)
-//    @JoinTable(name = "products_categories", joinColumns = {
-//            @JoinColumn(name = "product_id", referencedColumnName = "id") }, inverseJoinColumns = {
-//            @JoinColumn(name = "category_id", referencedColumnName = "id") })
-//    private List<Category> categories;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "products_categories", joinColumns = {
+            @JoinColumn(name = "product_id", referencedColumnName = "id") }, inverseJoinColumns = {
+            @JoinColumn(name = "category_id", referencedColumnName = "id") })
+    private List<Category> categories;
 
     public Long getId() {
         return this.id;
@@ -57,7 +58,7 @@ public class Product {
         this.version = version;
     }
 
-    protected Product() {
+    public Product() {
 
     }
 
@@ -90,12 +91,18 @@ public class Product {
         this.price = price;
     }
 
-//    public List<Category> getCategories() {
-//        return categories;
-//    }
-//
-//    public void setCategories(List<Category> categories) {
-//        this.categories = categories;
-//    }
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
+    }
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", version=" + version + ", name=" + name + ", quantity=" + quantity + ", price="
+				+ price + "]";
+	}
 
 }

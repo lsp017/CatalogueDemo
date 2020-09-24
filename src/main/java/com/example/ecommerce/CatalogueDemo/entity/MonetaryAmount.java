@@ -19,7 +19,7 @@ public class MonetaryAmount {
         this(currency, new BigDecimal(value));
     }
 
-    private MonetaryAmount(Currency currency, BigDecimal value) {
+    public MonetaryAmount(Currency currency, BigDecimal value) {
 
         Assert.notNull(currency);
         Assert.notNull(value);

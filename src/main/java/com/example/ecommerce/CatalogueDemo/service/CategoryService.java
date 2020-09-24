@@ -20,10 +20,10 @@ public class CategoryService {
 		return categoryRepository.findAll();
 	}
 	
-	public Optional<Category> retrieveCategoryById(Long id) {
+	public Category retrieveCategoryById(Long id) {
 		Optional<Category> category = categoryRepository.findById(id);
 		category.orElseThrow(() -> new RecordNotFoundException("Category not found with categoryId = "+ id));
-		return category;
+		return category.get();
 	}
 	
 	public Long createNewCategory(Category category) {
