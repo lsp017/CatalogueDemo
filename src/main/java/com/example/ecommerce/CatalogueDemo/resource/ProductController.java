@@ -50,7 +50,7 @@ private final ProductService productService;
     @PutMapping(value = "/{productId}")
     public ResponseEntity<Void> updatePerson(@PathVariable Long productId,
                                              @RequestBody Product product) {
-        Long version = productService.updatePerson(productId,product);
+        Long version = productService.updateProduct(productId,product);
         LOG.info("Product update is successful, productId={}", productId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT)
                 .build();
@@ -60,7 +60,7 @@ private final ProductService productService;
     @ApiOperation("Delete a product. 404 if the product is not found.")
     @DeleteMapping(value = "/{productId}")
     public ResponseEntity<Void> deletePerson(@PathVariable Long productId) {
-        productService.deletePerson(productId);
+        productService.deleteProduct(productId);
         LOG.info("Product delete is successful, productId={}", productId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT)
                 .build();

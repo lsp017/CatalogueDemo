@@ -4,8 +4,11 @@ import com.example.ecommerce.CatalogueDemo.entity.MonetaryAmount;
 import com.example.ecommerce.CatalogueDemo.entity.Product;
 import org.springframework.stereotype.Component;
 
+<<<<<<< HEAD
 import java.math.BigDecimal;
 
+=======
+>>>>>>> Vani
 @Component
 public class ProductConvertor {
     public static Product productModelToEntity(Product product) {
@@ -14,7 +17,17 @@ public class ProductConvertor {
         productEntity.setQuantity(product.getQuantity());
         productEntity.setId(product.getId());
         productEntity.setVersion(product.getVersion());
+<<<<<<< HEAD
         product.setPrice(monetaryAmount);
         return productEntity;
     }
 }
+=======
+        productEntity.setPrice(monetaryAmount);
+        
+        productEntity.setCategories(product.getCategories());
+        
+        return productEntity;
+    }
+}
+>>>>>>> Vani
