@@ -42,7 +42,7 @@ public class CategoryController {
 	
 	@ApiOperation("Get a Category details. 404 if the category ID is not found.")
 	@GetMapping("/category/{categoryId}")
-	public ResponseEntity<Category> retrieveCategoryById(@PathVariable Long categoryId) {
+	public ResponseEntity<Optional<Category>> retrieveCategoryById(@PathVariable Long categoryId) {
 		return ResponseEntity.status(HttpStatus.OK).body(service.retrieveCategoryById(categoryId));
 		
 	}

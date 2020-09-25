@@ -22,9 +22,9 @@ public class Category {
     @Column(nullable = false)
     private String name;
 
-    @ManyToMany(mappedBy = "categories")
-    @JsonIgnore
-    private List<Product> products;
+//    @ManyToMany(mappedBy = "categories")
+//    @JsonIgnore
+//    private List<Product> products;
 
     public Long getId() {
         return id;
@@ -42,18 +42,13 @@ public class Category {
         this.name = name;
     }
 
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
-
-	@Override
-	public String toString() {
-		return "Category [id=" + id + ", name=" + name + "]";
-	}
+//    public List<Product> getProducts() {
+//        return products;
+//    }
+//
+//    public void setProducts(List<Product> products) {
+//        this.products = products;
+//    }
 
 }
 

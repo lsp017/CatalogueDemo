@@ -1,17 +1,11 @@
 package com.example.ecommerce.CatalogueDemo.entity;
 
+import com.example.ecommerce.CatalogueDemo.entity.MonetaryAmount;
+import org.springframework.beans.factory.annotation.Value;
+
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
-import javax.persistence.Version;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -21,7 +15,6 @@ public class Product {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue
     private Long id;
 
     @Version
@@ -37,11 +30,11 @@ public class Product {
     @Embedded
     private MonetaryAmount price;
 
-    @ManyToMany
-    @JoinTable(name = "products_categories", joinColumns = {
-            @JoinColumn(name = "product_id", referencedColumnName = "id") }, inverseJoinColumns = {
-            @JoinColumn(name = "category_id", referencedColumnName = "id") })
-    private List<Category> categories;
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name = "products_categories", joinColumns = {
+//            @JoinColumn(name = "product_id", referencedColumnName = "id") }, inverseJoinColumns = {
+//            @JoinColumn(name = "category_id", referencedColumnName = "id") })
+//    private List<Category> categories;
 
     public Long getId() {
         return this.id;
@@ -59,7 +52,7 @@ public class Product {
         this.version = version;
     }
 
-    public Product() {
+    protected Product() {
 
     }
 
@@ -92,18 +85,12 @@ public class Product {
         this.price = price;
     }
 
-    public List<Category> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
-    }
-
-	@Override
-	public String toString() {
-		return "Product [id=" + id + ", version=" + version + ", name=" + name + ", quantity=" + quantity + ", price="
-				+ price + "]";
-	}
+//    public List<Category> getCategories() {
+//        return categories;
+//    }
+//
+//    public void setCategories(List<Category> categories) {
+//        this.categories = categories;
+//    }
 
 }
